@@ -19,6 +19,12 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                 onPress={
                     () => navigation.navigate('Pagina2Screen')
                 } />
+
+            <Button
+                title='Ir a Persona'
+                onPress={
+                    () => navigation.navigate('PersonaScreen')
+                } />
         </View>
     )
 }
