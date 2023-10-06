@@ -20,29 +20,40 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                 onPress={
                     () => navigation.navigate('Pagina2Screen')
                 } />
-            <TouchableOpacity
-                onPress={
-                    () => navigation.navigate('PersonaScreen', {
-                        id: 1,
-                        nombre: 'Pedro'
-                    })
-                } >
-                <Text>Pedro</Text>
-            </TouchableOpacity>
+            <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity
+                    style={{
+                        ...styles.botonGrande, //Se debe desestructurar el estilo para poder sobreescribir el backgroundColor en la siguiente linea
+                        backgroundColor: '#5856D6'
+                    }}
+                    onPress={
+                        () => navigation.navigate('PersonaScreen', {
+                            id: 1,
+                            nombre: 'Pedro'
+                        })
+                    } >
+                    <Text style={styles.botonGrandeTexto}>Pedro</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity
-                onPress={
-                    () => navigation.navigate('PersonaScreen', {
-                        id: 2,
-                        nombre: 'Jose'
-                    })
-                } >
-                <Text>Jose</Text>
-            </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.botonGrande}
+                    onPress={
+                        () => navigation.navigate('PersonaScreen', {
+                            id: 2,
+                            nombre: 'Jose'
+                        })
+                    } >
+                    <Text style={styles.botonGrandeTexto}>Jose</Text>
+                </TouchableOpacity>
+            </View>
+            
             <Button
                 title='Ir a Persona'
                 onPress={
-                    () => navigation.navigate('PersonaScreen')
+                    () => navigation.navigate('PersonaScreen', {
+                        id: 3,
+                        nombre: 'Lucia'
+                    })
                 } />
         </View>
     )

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Text, View } from 'react-native'
 import { styles } from '../theme/AppTheme';
 import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParams } from '../navigator/StackNavigator';
 
 /*
 interface RouterParams {
@@ -10,7 +11,7 @@ interface RouterParams {
 }
 */
 
-interface Props extends StackScreenProps<any, any> { };
+interface Props extends StackScreenProps<RootStackParams, 'PersonaScreen'> { };
 
 export const PersonaScreen = ({ route, navigation }: Props) => {
 
