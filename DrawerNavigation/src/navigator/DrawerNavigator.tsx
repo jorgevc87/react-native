@@ -6,7 +6,7 @@ import { Screen3 } from '../screens/Screen3';
 
 const Drawer = createDrawerNavigator();
 
-export const MyDrawer = () => {
+export const MDrawer = () => {
     return (
         <Drawer.Navigator>
             <Drawer.Screen name='Screen1' options={{ title: "Pagina 1" }} component={Screen1}/>
