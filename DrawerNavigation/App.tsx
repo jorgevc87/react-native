@@ -5,17 +5,16 @@ import 'react-native-gesture-handler';
  *
  */
 
-
-import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { MDrawer } from './src/navigator/DrawerNavigator'
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {CustomMDrawer} from './src/navigator/CustomDrawerNavigator';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <MDrawer />
+      <CustomMDrawer />
     </NavigationContainer>
-  )
-}
+  );
+};
 
 export default App;

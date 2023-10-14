@@ -4,10 +4,11 @@ import { Screen1 } from '../screens/Screen1';
 import { Screen2 } from '../screens/Screen2';
 import { Screen3 } from '../screens/Screen3';
 import { useWindowDimensions } from 'react-native';
+//import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
-export const MDrawer = () => {
+export const CustomMDrawer = () => {
 
     const { width } = useWindowDimensions() //Puedo obtener la dimension de la pantalla
 
@@ -20,6 +21,12 @@ export const MDrawer = () => {
     )
 }
 
+/*
 
+const MenuInterno = () => {
+    return <Text> Hola Mundo </Text>
+    
+}
 
+*/
 
