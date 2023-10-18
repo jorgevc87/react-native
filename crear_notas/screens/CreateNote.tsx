@@ -76,7 +76,7 @@ export const CreateNote = () => {
 
             <TouchableOpacity
               style={AppStyle.botonDate}
-              onPress={() => showMode("date")}>
+              onPress={() => showMode("time")}>
               <Text style={AppStyle.subTitle}>Time</Text>
             </TouchableOpacity>
 

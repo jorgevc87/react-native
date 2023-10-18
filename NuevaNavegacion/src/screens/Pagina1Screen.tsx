@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, Button } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack'
 import { styles } from '../theme/AppTheme';
@@ -9,7 +9,18 @@ interface Props extends StackScreenProps<any, any> { };
 export const Pagina1Screen = ({ navigation }: Props) => {
 
     //props son las properties del stacknavigator
-    console.log(navigation)
+    useEffect(() => {
+
+navigation.setOptions({
+    headerLeft: () => (
+        <Button
+        title='Menú'
+        onPress={() => {}}
+        />
+    )
+})
+
+    })
 
     return (
         <View style={styles.globalMargin}>
