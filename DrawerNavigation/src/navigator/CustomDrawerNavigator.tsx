@@ -15,8 +15,7 @@ export const CustomMDrawer = () => {
 
     return (
         <Drawer.Navigator
-            drawerContent={(props) => <MenuInterno{...props} />}
-        >
+            drawerContent={(props) => <MenuInterno{...props} />}>
             <Drawer.Screen name='Screen1' options={{ title: "Pagina 1" }} component={Screen1} />
             <Drawer.Screen name='Screen2' options={{ title: "Pagina 2" }} component={Screen2} />
             <Drawer.Screen name='Screen3' options={{ title: "Pagina 3" }} component={Screen3} />

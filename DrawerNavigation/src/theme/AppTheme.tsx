@@ -25,5 +25,8 @@ export const styles = StyleSheet.create({
     },
     menuTexto: {
         fontSize: 20
+    },
+    title: {
+        fontSize: 35
     }
 })
