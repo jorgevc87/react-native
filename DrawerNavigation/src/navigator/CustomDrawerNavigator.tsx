@@ -7,6 +7,7 @@ import { Image, Text, TouchableOpacity, View, useWindowDimensions } from 'react-
 import { styles } from '../theme/AppTheme';
 import { MyTabs } from './BottomTabsNavigator';
 import { MyMaterialTopTabs } from './MaterialTopTabNavigator';
+import { IconsScreen } from '../screens/IconsScreen';
 //import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
@@ -23,6 +24,7 @@ export const CustomMDrawer = () => {
             <Drawer.Screen name='Screen3' options={{ title: "Pagina 3" }} component={Screen3} />
             <Drawer.Screen name='BottomTabScreen' options={{ title: "Bottom Tabs" }} component={MyTabs} />
             <Drawer.Screen name='MyMaterialTopTabs' options={{ title: "Top Tabs" }} component={MyMaterialTopTabs} />
+            <Drawer.Screen name='IconsScreen' options={{ title: "Iconos" }} component={IconsScreen} />
         </Drawer.Navigator>
     )
 }
@@ -73,6 +75,12 @@ const MenuInterno = ({ navigation }: DrawerContentComponentProps) => {
                     style={styles.menuBoton}
                     onPress={() => navigation.navigate('MyMaterialTopTabs')}>
                     <Text style={styles.menuTexto}>Material Top Tabs</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.menuBoton}
+                    onPress={() => navigation.navigate('IconsScreen')}>
+                    <Text style={styles.menuTexto}>Iconos</Text>
                 </TouchableOpacity>
 
             </View>

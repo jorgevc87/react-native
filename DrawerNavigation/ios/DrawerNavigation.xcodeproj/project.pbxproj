@@ -43,6 +43,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-DrawerNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DrawerNavigation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DrawerNavigation/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DrawerNavigation-DrawerNavigationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrawerNavigation-DrawerNavigationTests.release.xcconfig"; path = "Target Support Files/Pods-DrawerNavigation-DrawerNavigationTests/Pods-DrawerNavigation-DrawerNavigationTests.release.xcconfig"; sourceTree = "<group>"; };
+		CF49E1582AEAE15E00963775 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -116,6 +117,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CF49E1572AEAE11F00963775 /* Font */,
 				13B07FAE1A68108700A75B9A /* DrawerNavigation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DrawerNavigationTests */,
@@ -146,6 +148,14 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-DrawerNavigation-DrawerNavigationTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF49E1572AEAE11F00963775 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CF49E1582AEAE15E00963775 /* Ionicons.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
