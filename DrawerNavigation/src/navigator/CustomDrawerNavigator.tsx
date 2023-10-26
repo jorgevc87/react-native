@@ -5,8 +5,8 @@ import { Screen2 } from '../screens/Screen2';
 import { Screen3 } from '../screens/Screen3';
 import { Image, Text, TouchableOpacity, View, useWindowDimensions } from 'react-native';
 import { styles } from '../theme/AppTheme';
-import { BottomTabScreen } from '../screens/BottomTabScreen';
 import { MyTabs } from './BottomTabsNavigator';
+import { MyMaterialTopTabs } from './MaterialTopTabNavigator';
 //import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
@@ -22,6 +22,7 @@ export const CustomMDrawer = () => {
             <Drawer.Screen name='Screen2' options={{ title: "Pagina 2" }} component={Screen2} />
             <Drawer.Screen name='Screen3' options={{ title: "Pagina 3" }} component={Screen3} />
             <Drawer.Screen name='BottomTabScreen' options={{ title: "Bottom Tabs" }} component={MyTabs} />
+            <Drawer.Screen name='MyMaterialTopTabs' options={{ title: "Top Tabs" }} component={MyMaterialTopTabs} />
         </Drawer.Navigator>
     )
 }
@@ -67,6 +68,13 @@ const MenuInterno = ({ navigation }: DrawerContentComponentProps) => {
                     onPress={() => navigation.navigate('BottomTabScreen')}>
                     <Text style={styles.menuTexto}>Bottom Tabs</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.menuBoton}
+                    onPress={() => navigation.navigate('MyMaterialTopTabs')}>
+                    <Text style={styles.menuTexto}>Material Top Tabs</Text>
+                </TouchableOpacity>
+
             </View>
         </DrawerContentScrollView>
     )

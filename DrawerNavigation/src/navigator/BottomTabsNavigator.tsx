@@ -1,18 +1,91 @@
 import React from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { TabScreen1 } from "../screens/TabScreen1"
-import { TabScreen2 } from "../screens/TabScreen2"
-import { TabScreen3 } from "../screens/TabScreen3"
-import { Text } from "react-native"
-
-const tabs = createBottomTabNavigator();
+import { BottomTabScreen1 } from "../screens/BottomTabScreen1"
+import { BottomTabScreen2 } from "../screens/BottomTabScreen2"
+import { BottomTabScreen3 } from "../screens/BottomTabScreen3"
+import { Platform, Text } from "react-native"
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { styles } from "../theme/AppTheme"
 
 export const MyTabs = () => {
+  return Platform.OS === 'ios'
+    ? <TabsIos />
+    : <TabsAndroid />
+}
+
+//MaterialBottom Tabs Android
+const BottomTabsAndroid = createMaterialBottomTabNavigator()
+function TabsAndroid() {
   return (
-    <tabs.Navigator
-      sceneContainerStyle={{
-        backgroundColor: 'white'
+    <BottomTabsAndroid.Navigator
+      sceneAnimationEnabled={true}
+      barStyle={{
+        backgroundColor: 'red',
+        paddingBottom: 5
       }}
+      backBehavior='order'
+      initialRouteName='BottomTabScreen1'
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: 'red',
+        tabBarActiveBackgroundColor: 'tomato',
+        tabBarIcon({ color, focused }) {
+
+          let iconName: String = ''
+
+          switch (route.name) {
+            case 'BottomTabScreen1':
+              iconName = 'T1'
+              break
+
+            case 'BottomTabScreen2':
+              iconName = 'T2'
+              break
+
+            case 'BottomTabScreen3':
+              iconName = 'T3'
+              break
+          }
+
+          return <Text style={{ color }}>{iconName}</Text>
+        },
+        tabBarStyle: {
+          borderTopColor: 'white',
+          borderWidth: 0,
+          elevation: 0,
+        },
+        tabBarLabelStyle: {
+          fontSize: 15,
+        }
+      })}
+    >
+
+      <BottomTabsAndroid.Screen
+        name="BottomTabScreen1"
+        options={{ title: 'Tab 1' }}
+        component={BottomTabScreen1} />
+
+      <BottomTabsAndroid.Screen
+        name="BottomTabScreen2"
+        options={{ title: 'Tab 2' }}
+        component={BottomTabScreen2} />
+
+      <BottomTabsAndroid.Screen
+        name="BottomTabScreen3"
+        options={{ title: 'Tab 3' }}
+        component={BottomTabScreen3} />
+
+    </BottomTabsAndroid.Navigator>
+  )
+}
+
+
+//Bottom Tabs iOS
+const BottomTabsIos = createBottomTabNavigator();
+
+function TabsIos() {
+  return (
+    <BottomTabsIos.Navigator
+
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: 'red',
         tabBarActiveBackgroundColor: 'white',
@@ -21,15 +94,15 @@ export const MyTabs = () => {
           let iconName: String = ''
 
           switch (route.name) {
-            case 'TabScreen1':
+            case 'BottomTabScreen1':
               iconName = 'T1'
               break
 
-            case 'TabScreen2':
+            case 'BottomTabScreen2':
               iconName = 'T2'
               break
 
-            case 'TabScreen3':
+            case 'BottomTabScreen3':
               iconName = 'T3'
               break
           }
@@ -58,20 +131,20 @@ export const MyTabs = () => {
         component={TabScreen1} />      
       */}
 
-      <tabs.Screen
-        name="TabScreen1"
+      <BottomTabsIos.Screen
+        name="BottomTabScreen1"
         options={{ title: 'Tab 1' }}
-        component={TabScreen1} />
+        component={BottomTabScreen1} />
 
-      <tabs.Screen
-        name="TabScreen2"
+      <BottomTabsIos.Screen
+        name="BottomTabScreen2"
         options={{ title: 'Tab 2' }}
-        component={TabScreen2} />
+        component={BottomTabScreen2} />
 
-      <tabs.Screen
-        name="TabScreen3"
+      <BottomTabsIos.Screen
+        name="BottomTabScreen3"
         options={{ title: 'Tab 3' }}
-        component={TabScreen3} />
-    </tabs.Navigator>
-  );
-};
+        component={BottomTabScreen3} />
+    </BottomTabsIos.Navigator>
+  )
+}
