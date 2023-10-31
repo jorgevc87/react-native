@@ -8,6 +8,7 @@ import { styles } from '../theme/AppTheme';
 import { MyTabs } from './BottomTabsNavigator';
 import { MyMaterialTopTabs } from './MaterialTopTabNavigator';
 import { IconsScreen } from '../screens/IconsScreen';
+import Icon from 'react-native-vector-icons/Ionicons'
 //import { Text } from 'react-native';
 
 const Drawer = createDrawerNavigator();
@@ -50,6 +51,7 @@ const MenuInterno = ({ navigation }: DrawerContentComponentProps) => {
                 <TouchableOpacity
                     style={styles.menuBoton}
                     onPress={() => navigation.navigate('Screen1')}>
+                    <Icon name="airplane-outline" size={30} color="#900" />
                     <Text style={styles.menuTexto}>Screen 1</Text>
                 </TouchableOpacity>
 

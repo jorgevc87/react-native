@@ -6,6 +6,7 @@ import { BottomTabScreen3 } from "../screens/BottomTabScreen3"
 import { Platform, Text } from "react-native"
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import { styles } from "../theme/AppTheme"
+import Icon from 'react-native-vector-icons/Ionicons'
 
 export const MyTabs = () => {
   return Platform.OS === 'ios'
@@ -34,19 +35,19 @@ function TabsAndroid() {
 
           switch (route.name) {
             case 'BottomTabScreen1':
-              iconName = 'T1'
+              iconName = 'arrow-redo-outline'
               break
 
             case 'BottomTabScreen2':
-              iconName = 'T2'
+              iconName = 'at-circle-outline'
               break
 
             case 'BottomTabScreen3':
-              iconName = 'T3'
+              iconName = 'battery-full-outline'
               break
           }
 
-          return <Text style={{ color }}>{iconName}</Text>
+          return <Icon name={iconName} size={20} color={color} focused/>
         },
         tabBarStyle: {
           borderTopColor: 'white',
@@ -95,19 +96,19 @@ function TabsIos() {
 
           switch (route.name) {
             case 'BottomTabScreen1':
-              iconName = 'T1'
+              iconName = 'arrow-redo-outline'
               break
 
             case 'BottomTabScreen2':
-              iconName = 'T2'
+              iconName = 'at-circle-outline'
               break
 
             case 'BottomTabScreen3':
-              iconName = 'T3'
+              iconName = 'battery-full-outline'
               break
           }
 
-          return <Text style={{ color }}>{iconName}</Text>
+          return <Icon name={iconName} size={20} />
         },
         tabBarStyle: {
           borderTopColor: 'white',
