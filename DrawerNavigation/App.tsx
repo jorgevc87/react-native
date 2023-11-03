@@ -6,15 +6,26 @@ import 'react-native-gesture-handler';
  */
 
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {CustomMDrawer} from './src/navigator/CustomDrawerNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import { CustomMDrawer } from './src/navigator/CustomDrawerNavigator';
+import { AuthProvider } from './src/context/authContext/AuthContext';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <CustomMDrawer />
+      <AppState>
+        <CustomMDrawer />
+      </AppState>
     </NavigationContainer>
   );
 };
+
+const AppState = ({ children }: any) => {
+  return (
+    <AuthProvider>
+      {children}
+    </AuthProvider>
+  )
+}
 
 export default App;
