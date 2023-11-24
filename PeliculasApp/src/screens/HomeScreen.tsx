@@ -6,7 +6,7 @@ export const HomeScreen = () => {
 
     const { peliculasEnCine } = useMovies()
 
-    console.log(peliculasEnCine[1].title)
+    //console.log(peliculasEnCine[1].title)
 
     return (
         <View>
