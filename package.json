@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@react-navigation/material-bottom-tabs": "^6.2.18",
-    "paper": "^0.12.17",
-    "react-native": "^0.72.6",
-    "react-native-paper": "^5.11.0"
-  }
-}
