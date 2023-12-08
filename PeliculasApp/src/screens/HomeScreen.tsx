@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { ActivityIndicator, Text, View } from 'react-native'
 import { useMovies } from '../hooks/useMovies'
+import { MoviePoster } from '../components/MoviePoster'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 export const HomeScreen = () => {
 
-    const { peliculasEnCine } = useMovies()
+    const { peliculasEnCine, isLoading } = useMovies()
+    const { top } = useSafeAreaInsets()
 
-    //console.log(peliculasEnCine[1].title)
+    //console.log(peliculasEnCine[3]?.title)
 
-    return (
-        <View>
-            <Text>
-                Home Screen
-            </Text>
-        </View>
-    )
+    if (isLoading) {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
+                <ActivityIndicator color="red" size={100} />
+            </View>
+        )
+    }
 }
