@@ -11,7 +11,7 @@ const { width: windowWidth } = Dimensions.get('window')
 
 export const HomeScreen = () => {
 
-    const { peliculasEnCine, isLoading } = useMovies()
+    const { nowPlaying, popular, topRated, upConming, isLoading } = useMovies()
     const { top } = useSafeAreaInsets()
 
     //console.log(peliculasEnCine[3]?.title)
@@ -36,15 +36,16 @@ export const HomeScreen = () => {
 
                     {/* LIBRERIA EXTERNA: react-native-snap-carousel*/}
                     <Carousel
-                        data={peliculasEnCine}
+                        data={nowPlaying!}
                         renderItem={({ item }: any) => <MoviePoster movie={item} />}
                         sliderWidth={windowWidth}
                         itemWidth={300}
                     />
                 </View>
 
-                <HorizontalSlider movies={peliculasEnCine} />
-                <HorizontalSlider movies={peliculasEnCine} title={"En cine"} />
+                <HorizontalSlider movies={popular!} title={"Populares"} />
+                <HorizontalSlider movies={topRated!} title={"Top Rated"} />
+                <HorizontalSlider movies={upConming!} title={"Upcoming"} />
 
             </View>
 
