@@ -2,6 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { RootStackParams } from '../Navigation'
+//import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props extends StackScreenProps<RootStackParams, 'detail'> { }
 
@@ -31,6 +32,14 @@ export const DetailScreen = ({ navigation, route }: Props) => {
                 <Text style={styles.title}>
                     {movie.title}
                 </Text>
+            </View>
+
+            <View style={styles.marginConatiner}>
+{/*                 <Icon
+                    name="star-outline"
+                    color="grey"
+                    size={28}
+                /> */}
             </View>
         </ScrollView>
     )
