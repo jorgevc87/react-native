@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ActivityIndicator, Text, View, Dimensions, FlatList, ScrollView } from 'react-native'
+import { ActivityIndicator, Text, View, Dimensions, ScrollView } from 'react-native'
 import { useMovies } from '../hooks/useMovies'
 import { MoviePoster } from '../components/MoviePoster'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -14,8 +14,6 @@ export const HomeScreen = () => {
     const { nowPlaying, popular, topRated, upConming, isLoading } = useMovies()
     const { top } = useSafeAreaInsets()
 
-    //console.log(peliculasEnCine[3]?.title)
-
     if (isLoading) {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
@@ -26,9 +24,6 @@ export const HomeScreen = () => {
     return (
         <ScrollView>
             <View style={{ marginTop: top + 20 }}>
-                {/*<MoviePoster
-                movie={peliculasEnCine[6]}
-            />*/}
 
                 <View style={{
                     height: 440
@@ -43,9 +38,9 @@ export const HomeScreen = () => {
                     />
                 </View>
 
-                <HorizontalSlider movies={popular!} title={"Populares"} />
-                <HorizontalSlider movies={topRated!} title={"Top Rated"} />
-                <HorizontalSlider movies={upConming!} title={"Upcoming"} />
+                <HorizontalSlider movies={popular} title={"Populares"} />
+                <HorizontalSlider movies={topRated} title={"Top Rated"} />
+                <HorizontalSlider movies={upConming} title={"Upcoming"} />
 
             </View>
 

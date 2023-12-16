@@ -2,8 +2,18 @@ import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
 import { HomeScreen } from './screens/HomeScreen'
 import { DetailScreen } from './screens/DetailScreen'
+import { Movie } from './interfaces/movieInterface'
 
-const Stack = createStackNavigator()
+//Para definir los objetos/parametros que recibe cada screen se hace mediante un
+//Type
+
+export type RootStackParams = {
+    home: undefined,
+    detail: Movie
+}
+
+//Creacion del stacknavigator y se le asigna el type creado
+const Stack = createStackNavigator<RootStackParams>()
 
 export const MyStack = () => {
     return (
@@ -14,8 +24,8 @@ export const MyStack = () => {
                     backgroundColor: 'white'
                 }
             }}>
-            <Stack.Screen name='HomeScreen' component={HomeScreen} />
-            <Stack.Screen name='DetailScreen' component={DetailScreen} />
+            <Stack.Screen name='home' component={HomeScreen} />
+            <Stack.Screen name='detail' component={DetailScreen} />
         </Stack.Navigator>
     )
 }
