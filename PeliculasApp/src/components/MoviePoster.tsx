@@ -1,11 +1,11 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Movie } from '../interfaces/movieInterface'
+import { MovieFull } from '../interfaces/movieInterface'
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
 
 interface Props {
-    movie: Movie;
+    movie: MovieFull;
     height?: number;
     width?: number;
 }

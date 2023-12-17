@@ -1,11 +1,11 @@
 import React from 'react'
-import { Movie } from '../interfaces/movieInterface'
+import { MovieFull } from '../interfaces/movieInterface'
 import { FlatList, Text, View } from 'react-native'
 import { MoviePoster } from './MoviePoster'
 
 interface Props {
     title?: String,
-    movies: Movie[]
+    movies: MovieFull[]
 }
 
 export const HorizontalSlider = ({ title, movies }: Props) => {

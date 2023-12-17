@@ -3,7 +3,7 @@
 export interface MovieDBMoviesResponse {
     dates?:         Dates;
     page:          number;
-    results:       Movie[];
+    results:       MovieFull[];
     total_pages:   number;
     total_results: number;
 }
@@ -13,7 +13,7 @@ export interface Dates {
     minimum: string;
 }
 
-export interface Movie {
+export interface MovieFull {
     adult:             boolean;
     backdrop_path:     string;
     genre_ids:         number[];

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import movieDB from '../api/movieDB'
-import { Movie, MovieDBMoviesResponse } from '../interfaces/movieInterface'
+import { MovieFull, MovieDBMoviesResponse } from '../interfaces/movieInterface'
 
 interface MoviesState {
-    nowPlaying: Movie[],
-    popular: Movie[],
-    topRated: Movie[],
-    upConming: Movie[]
+    nowPlaying: MovieFull[],
+    popular: MovieFull[],
+    topRated: MovieFull[],
+    upConming: MovieFull[]
 }
 
 export const useMovies = () => {
