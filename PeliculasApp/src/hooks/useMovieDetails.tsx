@@ -7,7 +7,7 @@ import { Cast, CreditResponse } from "../interfaces/creditsInterface";
 interface MovieDetails {
     isLoading: boolean;
     movieFull?: MovieFull;
-    cast: Cast[]
+    cast: Cast[];
 }
 
 export const useMovieDetails = (movieId: number) => {
