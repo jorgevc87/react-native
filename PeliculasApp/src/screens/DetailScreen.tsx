@@ -6,11 +6,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useMovieDetails } from '../hooks/useMovieDetails';
 import { MovieDetails } from '../components/MovieDetails';
 
-interface Props extends StackScreenProps<RootStackParams, 'detail'> { }
-
 const screenHeight = Dimensions.get('screen').height
 
-export const DetailScreen = ({ navigation, route }: Props) => {
+
+interface Props extends StackScreenProps<RootStackParams, 'detail'> { }
+
+export const DetailScreen = ({ route }: Props) => {
 
     const movie = route.params
     const uri = "https://image.tmdb.org/t/p/w500" + movie.poster_path
@@ -40,22 +41,11 @@ export const DetailScreen = ({ navigation, route }: Props) => {
                 </Text>
             </View>
 
-            {/*<View style={styles.marginConatiner}>
-                <Icon
-                    name="star-outline"
-                    color="grey"
-                    size={20}
-                />
-            </View>*/}
-
-            <View style={styles.marginConatiner}>
-                {
-                    isLoading
-                        ? <ActivityIndicator size={35} color="grey" style={{ marginTop: 20 }} />
-                        : <MovieDetails />
-                }
-            </View>
-
+            {
+                isLoading
+                    ? <ActivityIndicator size={35} color="grey" style={{ marginTop: 20 }} />
+                    : <MovieDetails />
+            }
         </ScrollView>
     )
 }

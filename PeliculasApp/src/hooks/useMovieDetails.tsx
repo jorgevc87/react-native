@@ -36,7 +36,7 @@ export const useMovieDetails = (movieId: number) => {
 
     useEffect(() => {
         getMovieDetails()
-    })
+    }, [])
 
     return {
         ...state
