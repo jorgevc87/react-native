@@ -4,7 +4,7 @@ import { useMovies } from '../hooks/useMovies'
 import { MoviePoster } from '../components/MoviePoster'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import Carousel from 'react-native-snap-carousel'
+//import Carousel from 'react-native-snap-carousel'
 import { HorizontalSlider } from '../components/HorizontalSlider'
 
 const { width: windowWidth } = Dimensions.get('window')
@@ -20,7 +20,7 @@ export const HomeScreen = () => {
                 <ActivityIndicator color="red" size={100} />
             </View>
         )
-    }
+    }               
     return (
         <ScrollView>
             <View style={{ marginTop: top + 20 }}>
@@ -30,20 +30,20 @@ export const HomeScreen = () => {
                 }}>
 
                     {/* LIBRERIA EXTERNA: react-native-snap-carousel*/}
-                    <Carousel
+                    {/* <Carousel
                         data={nowPlaying!}
                         renderItem={({ item }: any) => <MoviePoster movie={item} />}
                         sliderWidth={windowWidth}
                         itemWidth={300}
-                    />
+                    /> */}
                 </View>
 
-                <HorizontalSlider movies={popular} title={"Populares"} />
+                {/* <HorizontalSlider movies={popular} title={"Populares"} />
                 <HorizontalSlider movies={topRated} title={"Top Rated"} />
-                <HorizontalSlider movies={upConming} title={"Upcoming"} />
+                <HorizontalSlider movies={upConming} title={"Upcoming"} /> */}
 
             </View>
-
+            
         </ScrollView>
     )
 }
