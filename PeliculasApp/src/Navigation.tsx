@@ -10,7 +10,7 @@ import { TestScreen } from './screens/TestScreen'
 
 export type RootStackParams = {
     home: undefined,
-    test: undefined,
+    /* test: undefined, */
     detail: MovieFull
 }
 
@@ -26,7 +26,7 @@ export const MyStack = () => {
                     backgroundColor: 'white'
                 }
             }}>
-            <Stack.Screen name="test" component={TestScreen} />
+            {/* <Stack.Screen name="test" component={TestScreen} /> */}
             <Stack.Screen name="home" component={HomeScreen} />
             <Stack.Screen name="detail" component={DetailScreen} />
         </Stack.Navigator>

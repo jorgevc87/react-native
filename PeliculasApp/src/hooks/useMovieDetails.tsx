@@ -7,7 +7,7 @@ import { Cast, CreditResponse } from "../interfaces/creditsInterface";
 interface MovieDetails {
     isLoading: boolean;
     movieFull?: MovieFull;
-    cast: Cast[];
+    protagonistas: Cast[];
 }
 
 export const useMovieDetails = (movieId: number) => {
@@ -16,7 +16,7 @@ export const useMovieDetails = (movieId: number) => {
     const [state, setState] = useState<MovieDetails>({
         isLoading: true,
         movieFull: undefined,
-        cast: []
+        protagonistas: []
     })
 
     const getMovieDetails = async () => {
@@ -30,7 +30,7 @@ export const useMovieDetails = (movieId: number) => {
         setState({
             isLoading: false,
             movieFull: movieDetailsResp.data,
-            cast: castPromiseResp.data.cast
+            protagonistas: castPromiseResp.data.cast
         })
     }
 

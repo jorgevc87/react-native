@@ -18,7 +18,9 @@ export const TestScreen = () => {
             </Text>
 
             <TouchableOpacity
-                onPress={() => navigation.navigate('home')}
+                onPress={
+                    () => navigation.navigate('home')
+                }
                 activeOpacity={0.8}
                 style={{
                     width: 100,

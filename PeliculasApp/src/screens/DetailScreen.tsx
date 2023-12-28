@@ -16,7 +16,7 @@ export const DetailScreen = ({ route }: Props) => {
     const movie = route.params
     const uri = "https://image.tmdb.org/t/p/w500" + movie.poster_path
 
-    const { isLoading, cast, movieFull } = useMovieDetails(movie.id)
+    const { isLoading, protagonistas, movieFull } = useMovieDetails(movie.id)
 
     console.log({ isLoading })
 
@@ -44,7 +44,7 @@ export const DetailScreen = ({ route }: Props) => {
             {
                 isLoading
                     ? <ActivityIndicator size={35} color="grey" style={{ marginTop: 20 }} />
-                    : <MovieDetails />
+                    : <MovieDetails movie={movie} cast={protagonistas} />
             }
         </ScrollView>
     )
