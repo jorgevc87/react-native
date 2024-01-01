@@ -11,7 +11,7 @@ interface Props {
 
 export const MovieDetails = ({ movie, cast }: Props) => {
     return (
-        <View style={{ marginHorizontal: 20 }}>
+        <View style={{ marginHorizontal: 20, marginBottom: 20 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ width: 16, height: 16 }} />
 
@@ -61,7 +61,9 @@ export const MovieDetails = ({ movie, cast }: Props) => {
             </Text>
 
             <FlatList
+                style={{ marginTop: 10, height: 70 }}
                 data={cast}
+                showsHorizontalScrollIndicator={false}
                 horizontal={true}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => <CastItem actor={item} />}
