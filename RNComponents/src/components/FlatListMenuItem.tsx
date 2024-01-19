@@ -7,6 +7,9 @@ import {useNavigation} from "@react-navigation/native";
 export type ItemProps = { title?: string, icon?: string, components?: string }
 
 export const RenderMenuItem = ({title = "Title", icon = "Icono", components = "Components"}: ItemProps) => (
+    
+    const navigation = useNavigation();
+
     <TouchableOpacity
         activeOpacity={0.8}>
         <View style={styles.container}>
